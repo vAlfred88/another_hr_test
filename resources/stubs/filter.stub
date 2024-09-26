@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Filters;
+
+class {{ class }} extends AbstractFilter
+{
+    // The filter key in the request (e.g., 'name', 'email')
+    protected function filterName()
+    {
+        return '{{ filterName }}';
+    }
+
+    // Apply the filter logic for '{{ filterName }}'
+    protected function applyFilter($builder)
+    {
+        return $builder->where('{{ filterName }}', 'like', '%' . $this->filterValue() . '%');
+    }
+}
